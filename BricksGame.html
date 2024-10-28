@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>進階打磚塊遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="startMenu" class="menu">
+            <h1>打磚塊遊戲</h1>
+            <div class="theme-select">
+                <h3>選擇主題</h3>
+                <button data-theme="default" class="theme-btn">預設</button>
+                <button data-theme="night" class="theme-btn">夜空</button>
+                <button data-theme="forest" class="theme-btn">森林</button>
+            </div>
+            <div class="difficulty-select">
+                <h3>選擇難度</h3>
+                <div class="difficulty-select">
+
+                    <button data-difficulty="easy">簡單</button>
+                    <button data-difficulty="medium">中等</button>
+                    <button data-difficulty="hard">困難</button>
+                </div>
+            </div>
+            <h3>當前難度: <span id="currentDifficulty">未選擇</span></h3>
+            <button id="startButton" class="start-btn hide">開始遊戲</button>
+        </div>
+        
+        <div id="gameScreen" class="hide">
+            <div class="game-info">
+                <span>關卡: <span id="level">1</span></span>
+                <span>分數: <span id="score">0</span></span>
+                <span>生命: <span id="lives">3</span></span>
+                <span id="timeContainer" class="hide">
+                    時間: <span id="timeLeft">60</span>秒
+                </span>
+                <span>連擊: <span id="combo">0</span></span>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <div id="levelComplete" class="menu hide">
+            <h2>恭喜過關！</h2>
+            <p>當前分數: <span id="levelScore">0</span></p>
+            <button id="nextLevelButton">下一關</button>
+        </div>
+
+        <div id="gameOverMenu" class="menu hide">
+            <h2>遊戲結束</h2>
+            <p>最終分數: <span id="finalScore">0</span></p>
+            <p>最高分: <span id="highScore">0</span></p>
+            <button id="restartButton">重新開始</button>
+        </div>
+        <div id="pauseMenu" class="menu hide">
+            <h2>遊戲已暫停</h2>
+            <button id="resumeButton" class="resume-btn">繼續遊戲</button>
+            <button id="restartLevelButton">重新此關卡</button>
+            <button id="mainMenuButton">回到主畫面</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
